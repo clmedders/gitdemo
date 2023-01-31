@@ -1,0 +1,41 @@
+<form>
+	<div>
+		<label for="username">Username</label>
+		<input type="text" name="username" id="username">
+	</div>
+
+	<div>
+		<label for="password">Password</label>
+		<input type="password" name="password" id="password">
+	</div>
+
+	<div>
+		<label for="show-password">
+			<input type="checkbox" name="show-passwords" id="show-password">
+			Show password
+		</label>
+	</div>
+
+	<p>
+		<button type="submit">Log In</button>
+	</p>
+
+  <script>
+    // get the checkbox
+    const checkBox = document.querySelector('[id="show-password"]')
+    // get the password field
+    const passWord = document.querySelector('[id="password"]')
+    // make a function to toggle the password 
+    function showPassword() {
+      if (checkBox.checked) {
+        passWord.type = 'text';
+      } else {
+        passWord.type = 'password';
+      }
+    }
+    
+    // make it all work together. 
+    checkBox.addEventListener('click', showPassword)
+
+  </script>
+</form>
