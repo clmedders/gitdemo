@@ -1,0 +1,51 @@
+<form>
+	<div>
+		<label for="current-password">Current Password</label>
+		<input type="password" name="current-password" id="current-password" data-type="password">
+	</div>
+
+	<div>
+		<label for="new-password">New Password</label>
+		<input type="password" name="new-password" id="new-password" data-type="password">
+	</div>
+
+	<div>
+		<label for="show-passwords">
+			<input type="checkbox" name="show-passwords" id="show-passwords" data-type="checkbox">
+			Show passwords
+		</label>
+	</div>
+
+	<p>
+		<button type="submit">Change Passwords</button>
+	</p>
+
+  <script>
+
+    // get the checkbox 
+    const checkBox = document.querySelector('[data-type="checkbox"]')
+    // console.log(checkBox)
+
+    // get the pass word fields 
+    const passWords = document.querySelectorAll('[data-type="password"]')
+ 
+    // write a function to show both fields for current and new 
+    function watermelon () {
+      passWords.forEach(function (passWord) {
+      // console.log(passWords)
+      if (checkBox.checked) {
+        passWord.type = 'text'
+      } else {
+        passWord.type = 'password'
+      }
+    })
+    }
+ 
+    // put it all together
+    checkBox.addEventListener('click', watermelon);
+
+   
+
+
+  </script>
+</form>
