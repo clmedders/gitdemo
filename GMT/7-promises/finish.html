@@ -1,0 +1,40 @@
+<h1>Random Ron</h1>
+<blockquote id="quote" aria-live="polite"></blockquote>
+
+<p>
+	<button id="get-quote">More Ron</button>
+</p>
+
+<script>
+  // get more ron button 
+  const moreRon = document.getElementById("get-quote")
+  // console.log(moreRon)
+
+  // get the quote box 
+  const quote = document.getElementById('quote')
+  // console.log(quote)
+
+  function fetchQuote() {
+  // fech the data from the end point 
+  fetch('https://ron-swanson-quotes.herokuapp.com/v2/quotes').then(function (response) {
+
+  if (response.ok){
+    return response.json()
+  }
+    throw response.status;
+
+  }).then(function (data) {
+    quote.textContent = data[0];
+  }).catch(function (error) {
+  // There was an error
+  console.warn(error);
+  });
+  }
+
+
+
+moreRon.addEventListener('click', fetchQuote)
+
+  // write an click event function with the button and call the end point
+ 
+</script>
