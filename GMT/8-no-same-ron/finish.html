@@ -15,6 +15,9 @@
   const quote = document.getElementById('quote')
   // console.log(quote)
 
+  const pulledQuotes = []
+  // console.log(pulledQuotes)
+
   function fetchQuote() {
   // fech the data from the end point 
   fetch('https://ron-swanson-quotes.herokuapp.com/v2/quotes').then(function (response) {
@@ -24,15 +27,27 @@
   }
     throw response.status;
 
-  }).then(function (data) {
-    console.log(data)
-    quote.textContent = data[0];
-  }).catch(function (error) {
+  })
+  
+  .then(function (data) {
+    if (pulledQuotes >= 50) {
+      pulledQuotes.shift()
+    }
+     const currentQuote = data[0]
+    if (pulledQuotes.includes(currentQuote)) {
+      fetchQuote()
+    } else {
+      pulledQuotes.push(currentQuote)
+      quote.textContent = currentQuote;
+    }
+  })
+  
+  .catch(function (error) {
   // There was an error
-  console.warn(error);
+  quote.textContent = '[Something went wrong, sorry!] I have a joke for you... The government in this town is excellent, and uses your tax dollars efficiently.';
   });
-  }
 
+  }
 
 
 moreRon.addEventListener('click', fetchQuote)
@@ -40,3 +55,11 @@ moreRon.addEventListener('click', fetchQuote)
   // write an click event function with the button and call the end point
  
 </script>
+
+
+<!-- get quote 
+save it 
+slice it 
+compare 
+add to array
+print result if unique -->
