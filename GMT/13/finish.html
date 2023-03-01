@@ -1,0 +1,166 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Monsters!</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style type="text/css">
+			body {
+				margin: 0 auto;
+				max-width: 40em;
+				width: 88%;
+			}
+
+			/**
+			 * A simple grid layout
+			 */
+			.row {
+				display: grid;
+				grid-template-columns: auto auto auto;
+				text-align: center;
+			}
+
+			.grid {
+				min-height: 6em;
+				padding: 1em;
+			}
+
+			/**
+			 * Make sure images scale
+			 */
+			img {
+				height: auto;
+				max-width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+
+		<h1>Monsters!</h1>
+
+		<div id="app">
+
+    </div>
+
+    <button id="button" type="button">2319!</button>
+    
+    <!-- example of how the grid will look like -->
+
+
+
+
+		<script>
+
+      /**
+ * Randomly shuffle an array
+ * https://stackoverflow.com/a/2450976/1293256
+ * @param  {Array} array The array to shuffle
+ * @return {String}      The first item in the shuffled array
+ */
+function shuffle (array) {
+
+let currentIndex = array.length;
+let temporaryValue, randomIndex;
+
+// While there remain elements to shuffle...
+while (0 !== currentIndex) {
+  // Pick a remaining element...
+  randomIndex = Math.floor(Math.random() * currentIndex);
+  currentIndex -= 1;
+
+  // And swap it with the current element.
+  temporaryValue = array[currentIndex];
+  array[currentIndex] = array[randomIndex];
+  array[randomIndex] = temporaryValue;
+}
+
+return array;
+
+}
+			
+
+// The monsters and socks
+const monsters = [
+        {
+          name: "monster1",
+          alt: "Yellow monster with tail and proboscis"
+        },
+        {
+          name: "monster2",
+          alt:
+            "Yellow monster with bean-like head and long, skinny arms and legs"
+        },
+        {
+          name: "monster3",
+          alt: "Mouthless green monster with wavy hands"
+        },
+        {
+          name: "monster4",
+          alt: "Four handed, three fingered red monster"
+        },
+        {
+          name: "monster5",
+          alt: "Green monster with spiked head"
+        },
+        {
+          name: "monster6",
+          alt: "Green triangular head monster standing upside down"
+        },
+        {
+          name: "monster7",
+          alt: "Friendly looking purple monster with tentacle hands"
+        },
+        {
+          name: "monster8",
+          alt: "Poker faced purple one eyed monster"
+        },
+        {
+          name: "monster9",
+          alt: "Bug looking blue monster"
+        },
+        {
+          name: "monster10",
+          alt: "Donut looking blue monster with spiked mouth"
+        },
+        {
+          name: "monster11",
+          alt: "Yeti looking grey monster"
+        },
+        {
+          name: "sock",
+          alt: "A pair of white socks"
+        }
+      ];
+
+      
+      const button = document.getElementById('button')
+      // console.log(button)
+
+      // get the app element 
+      const grid = document.getElementById('app')
+
+// shuffle the monsters
+      const mixedMonster = shuffle(monsters)
+      // console.log(mixedMonster)
+
+// write a function to out put the shuffled monsters to the app element 
+
+// Generate markup to display in the UI
+grid.innerHTML =
+	`<div class="row">
+		${mixedMonster.map(function (monster) {
+			return `
+				<div class="grid">
+					<img alt="${monster.alt}" src="${monster.name}.svg">
+          <p>${monster.name}</p>
+				</div>`;
+		}).join('')}
+	</div>`;
+
+    
+		</script>
+
+
+	</body>
+</html>
+
