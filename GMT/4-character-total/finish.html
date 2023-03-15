@@ -1,0 +1,22 @@
+<label for="text">Enter your text below.</label>
+<textarea id="text"></textarea>
+
+<p>You've written <strong><span id="character-count">0</span> characters</strong>.</p>
+
+
+<script>
+  // get the text box 
+  const textBox = document.getElementById("text")
+
+  // get the caracter box 
+  const totalCount = document.getElementById("character-count")
+  
+  // write a fuction that gets the inner text of the text box and then outputs it to the character box
+
+  function wordTotal() {
+  totalCount.innerText = textBox.value.length 
+  }
+
+  textBox.addEventListener('input', wordTotal)
+  
+</script>

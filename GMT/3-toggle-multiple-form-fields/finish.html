@@ -1,0 +1,110 @@
+<body>
+  <h2>Change Username</h2>
+<p>Enter your username and password to change your username.</p>
+
+<form>
+	<div>
+		<label for="username">Username</label>
+		<input type="text" name="username" id="username">
+	</div>
+
+	<div>
+		<label for="password">Password</label>
+		<input type="password" name="password" id="password" data-type="passWord">
+	</div>
+
+	<div>
+		<label for="show-password">
+			<input type="checkbox" name="show-password" id="show-password"
+      data-box="checkBox">
+			Show password
+		</label>
+	</div>
+
+	<p>
+		<button type="submit">Change Username</button>
+	</p>
+
+  <script>
+    // // get checkbox field 
+    // const checkBox = document.querySelector('[data-type="checkBox"]')
+    // // console.log(checkBox)
+
+    // // get password fields 
+    // const passWords = document.querySelectorAll('[data-type="passWord"]')
+    // // console.log(passWord)
+    // // write function to allow passwords to show when checkbox is clicked 
+
+    // document.addEventListener('click', function (event) {
+    //   if (event.target.matches('[data-type="checkBox"]')) {
+    //   //  console.log('yes')
+    //     passWords.forEach(function (passWord) {
+    //       if (checkBox.checked) {
+    //     passWord.type = 'text'
+    //   } else {
+    //     passWord.type = 'password'
+    //   }
+    //     })
+    // } 
+    // });
+
+  // </script>
+</form>
+
+
+<h2>Change Password</h2>
+<p>Enter your current password and new password below.</p>
+
+<form>
+
+
+	<div>
+		<label for="current-password">Current Password</label>
+		<input type="password" name="current-password" id="current-password">
+	</div>
+
+	<div>
+		<label for="new-password">New Password</label>
+		<input type="password" name="new-password" id="new-password" data-type="passWord">
+	</div>
+
+	<div>
+		<label for="show-passwords">
+			<input type="checkbox" name="show-passwords" id="show-password"
+      data-box="checkBox">
+			Show passwords
+		</label>
+	</div>
+
+	<p>
+		<button type="submit">Change Passwords</button>
+	</p>
+
+  <!-- <script src="script.js"></script> -->
+  <script>
+    // get checkbox field 
+    // const checkBox = document.querySelector('[data-type="checkBox"]')
+    // console.log(checkBox)
+
+    // get password fields 
+    // const passWords = document.querySelectorAll('[data-type="passWord"]')
+    // console.log(passWord)
+    // write function to allow passwords to show when checkbox is clicked 
+
+    // document.addEventListener('click', function (event) {
+    //   if (event.target.matches('[data-type="checkBox"]')) {
+    //   //  console.log('yes')
+    //     passWords.forEach(function (passWord) {
+    //       if (checkBox.checked) {
+    //     passWord.type = 'text'
+    //   } else {
+    //     passWord.type = 'password'
+    //   }
+    //     })
+    // } 
+    // });
+
+  </script>
+</form>
+<script src="script.js"></script>
+</body>
