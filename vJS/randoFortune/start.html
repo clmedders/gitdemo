@@ -1,0 +1,27 @@
+<p>
+	<button>Get Your Fortune</button>
+</p>
+
+<div id="fortune"></div>
+
+<script>
+  // get the button 
+  const btn = document.querySelector('button')
+  // console.log(button)
+
+  // add text "You’re going to have a wonderful day!" into the fortune div  
+  const words = document.querySelector('#fortune')
+  // console.log(words)
+
+
+  // make a function 
+
+function tellFortune () {
+  words.textContent = "You're going to have a great day!"
+
+}
+
+  // add en event listener to the button 
+
+  btn.addEventListener('click', tellFortune)
+</script>
