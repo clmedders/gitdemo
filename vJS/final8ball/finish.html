@@ -11,15 +11,16 @@
 		content: '';
     border: 150px solid transparent;
     border-top: 0; 
-    border-top: 300px solid lightblue;
+    border-top: 300px solid blue;
 		position: absolute;
 		z-index: -1;
-		
 
 	}
 
   .loading-text{
     color: white;
+		padding-bottom: 50;
+		padding-top: 30;
 
 	}
 
@@ -38,15 +39,20 @@
 	flex-direction: column;
 	justify-content: center;
 	color: white;
-	height: 300px;
+	height: 200px;
 	align-items: center;
-	margin-top: -80px;
-
 	}
+
 
 	.body{
 		background-color: black;
 	}
+
+	.text{
+		margin-bottom: 30;
+	}
+
+
 
 </style>
 
@@ -55,8 +61,11 @@
 	<div class="container">
 		<p>
 			<p style="color: white">Ask me a question... anything at all</p>
+			<input type="text" class="text">
 			<button>roll the 8 ball</button>
 		</p>
+	<button class="reset">reset the 8 ball</button>
+
 
     <div class="loading">
 			<div class="loading-text"></div>
@@ -65,12 +74,12 @@
 		<div class="fortune-body">
 			<div class="fortune-text"></div>
 		</div>
+
 	</div>
 
+
+
 </body>
-
-
-
 
 <script>
 
@@ -137,6 +146,9 @@ let timeout;
   const btn = document.querySelector('button') 
   const words = document.querySelector('.fortune-text')
   const loading = document.querySelector('.loading-text')
+	const reset = document.querySelector('.reset')
+
+  function clear(){window.location.reload();}
 
   btn.addEventListener("click", function(){ loading.textContent = message[Math.floor(Math.random()*message.length)];});
 
@@ -153,13 +165,13 @@ let timeout;
 	timeout = setTimeout(function () {
 		shuffle(responses);
 		words.textContent = responses[0];
-	}, 2000);
+	},2000);
     
   }
 	
   btn.addEventListener('click', fortune)
 
+	reset.addEventListener('click', clear)
 
-  
 </script>
 
